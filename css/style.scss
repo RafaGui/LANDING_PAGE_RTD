@@ -20,13 +20,27 @@ body{
     background-color: var(--bgColor);
     color: var(--colorFont);
 }
+.body-inc-img{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    opacity: .02;
+    width: 100%;
+    height: 100%;
+    z-index: -9;
+}
+.body-inc-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 // CLASSES GLOBAIS
 .alinCenter{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.configButtons{
+.configButtons, .whatsbtn{
     // padding: 16px 40px;
     padding: 20px;
     width: 100%;
@@ -40,7 +54,19 @@ body{
     transition: .3s ease-in-out;
     box-shadow: 0px 0px 15px #db7a2b;
 }
-.configButtons:hover{
+.whatsbtn{
+    background-color: transparent;
+    border: 1px solid #215524;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #f7f7f7;
+    background-color: #25972b;
+    // box-shadow: 0px 0px 15px #24e72e;
+}
+.configButtons:hover, .whatsbtn:hover{
     transform: scale(.98);
 }
 .title h3{
@@ -148,9 +174,8 @@ body{
 }
 .imageMRD{
     width: 100%;
-    max-width: 150px;
+    max-width: 250px;
     margin: 0 auto;
-    margin-bottom: 20px;
 }
 .imageMRD img{
     width: 100%;
@@ -159,6 +184,11 @@ body{
 .link{
     width: 100%;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 .text{
     text-align: center;
@@ -212,16 +242,16 @@ body{
     z-index: 10;
 }
 .VdIn{
-    // position: relative;
-    // margin-bottom: 1.2rem;
-    // height: 400px;
+    box-shadow: 0px 0px 20px #572305;
     margin-top: -50px;
     width: 100%;
     max-width: 800px;
+    border-radius: 5px;
     margin-bottom: 20px;
 }
 .VdHere{
     position: relative;
+    border-radius: 5px;
     background-color: #111111;
     width: 100%;
     // max-width: 800px;
@@ -230,6 +260,7 @@ body{
 .VdHere iframe{
     position: absolute;
     width: 100%;
+    border-radius: 5px;
     height: 100%;
 }
 
@@ -242,7 +273,7 @@ body{
 }
 .blocoPlus{
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     border-radius: 4px;
     display: flex;
     // flex-direction: column;
@@ -255,7 +286,7 @@ body{
     background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(197, 197, 197, 0.055));
     width: 100%;
     max-width: 251.6px;
-    height: 350px;
+    // height: 350px;
     padding: 20px;
     border-radius: 4px;
     flex-direction: column;
@@ -272,6 +303,14 @@ body{
 }
 .blocoPlus .iconPlus i{
     font-size: 3rem;
+}
+.textBoxPlus{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.localPrice-text{
+    margin: 10px 0px;
+    font-size: 1.3rem;
 }
 
 @media screen and (max-width:500px) {
@@ -294,7 +333,7 @@ body{
 }
 .grade{
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -307,9 +346,9 @@ body{
 }
 .bloco{
     width: 100%;
-    max-width: 250px;
-    min-width: 250px;
-    height: 400px;
+    // max-width: 300px;
+    min-width: 300px;
+    height: 600px;
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -317,8 +356,8 @@ body{
     flex-direction: column;
     border-radius: 4px;
     position: relative;
-    // box-shadow: 0px 2px 0px #DA7724;
-    border: 1px solid #ff7300;
+    box-shadow: 0px 0px 10px #da7d31;
+    border: 2px solid #ff7300;
 }
 .bloco .icone{
     position: absolute;
@@ -335,18 +374,23 @@ body{
     border-radius: 4px;
     opacity: .9;
 }
-.bloco p{
+.bloco .text-bloco{
     width: 100%;
     max-width: 90%;
     position: absolute;
     left: 10px;
     bottom: 10px;
-    font-size: 1.5rem;
-    // background-color: #ffffff25;
-    font-weight: 700;
     text-align: left;
     color: var(--colorFont);
     z-index: 10;
+}
+.text-bloco p{
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.text-bloco span{
+    font-size: .9rem;
+    font-weight: 400;
 }
 .effect{
     width: 100%;
@@ -403,7 +447,7 @@ background-color: #555; /* Cor do pega ao passar o mouse */
 .imageAb{
     width: 500px;
     height: 300px;
-    background-color: #292929;
+    // background-color: #292929;
 }
 .imageAb img{
     width: 100%;
@@ -528,6 +572,8 @@ background-color: #555; /* Cor do pega ao passar o mouse */
 }
 .textGaran{
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 .textGaran h2{
     margin-bottom: 1rem;
@@ -561,7 +607,15 @@ background-color: #555; /* Cor do pega ao passar o mouse */
     text-decoration: none;
 }
 
-
+.configDets{
+    width: 100%;
+    margin: 20px 0px;
+}
+.configDets table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -596,4 +650,40 @@ details table th, details table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+}
+
+.mentor{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background-color: #0000003f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mentor h2{
+    text-transform: uppercase;
+    margin: 15px 0px;
+    text-align: center;
+}
+.mentor-imagem{
+    width: 100%;
+    max-width:500px;
+    height: 450px;
+    background-color: transparent;
+    margin: 0 auto;
+}
+.mentor-imagem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.mentor-text{
+    width: 100%;
+    max-width: 800px;
+}
+.mentor-text h3{
+    text-align: center;
+    margin: 15px 0px;
 }
